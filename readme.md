@@ -20,8 +20,6 @@ function clicked() {
 
 # Methods
 
-# Methods
-
 | method              | options |    description     | default |
 | :------------------ | :-----: | :----------------: | ------: |
 | share(url, message) |   url   |   share your url   |         |
