@@ -3,19 +3,26 @@
 # Installation
 
 ```sh
-$ npm install <package> --save
+$ npm install lesca-line-share --save
 ```
 
 # Usage
 
 ```javascript
-import foo from 'foo';
+import Line from 'lesca-line-share';
+
+function clicked() {
+	Line.share('https://github.com/jameshsu1125/lesca-line-share', 'message');
+}
+
+<button onClick={clicked}>Share to line</button>;
 ```
 
 # Methods
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ | :-------------: | ------------: |
-| col 3 is      | some wordy text |        \$1600 |
-| col 2 is      |    centered     |          \$12 |
-| zebra stripes |    are neat     |           \$1 |
+# Methods
+
+| method              | options |    description     | default |
+| :------------------ | :-----: | :----------------: | ------: |
+| share(url, message) |   url   |   share your url   |         |
+|                     | message | message share with |         |
