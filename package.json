@@ -1,6 +1,6 @@
 {
 	"name": "lesca-line-share",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Line Share",
 	"main": "lib/index.js",
 	"scripts": {
@@ -46,7 +46,7 @@
 		"webpack-dev-server": "^4.7.3"
 	},
 	"author": "jamehsu1125 <jameshsu1125@gmail.com>",
-	"homepage": "https://github.com/jameshsu1125",
+	"homepage": "https://github.com/jameshsu1125/lesca-line-share",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:jameshsu1125/lesca-line-share.git"
