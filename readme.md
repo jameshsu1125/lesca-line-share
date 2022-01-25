@@ -6,7 +6,9 @@
 $ npm install lesca-line-share --save
 ```
 
-#Demo [Live Demo](https://jameshsu1125.github.io/lesca-line-share/)
+# Demo
+
+[Live Demo](https://jameshsu1125.github.io/lesca-line-share/)
 
 # Usage
 
