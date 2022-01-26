@@ -19,6 +19,10 @@ function Page() {
 			<div>
 				<button onClick={onClick}>Share to line</button>
 			</div>
+			<div>
+				<h1>Usage</h1>
+				<a href='https://github.com/jameshsu1125/lesca-line-share'>Documentation</a>
+			</div>
 		</>
 	);
 }
