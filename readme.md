@@ -15,6 +15,7 @@ $ npm install lesca-line-share --save
 ```javascript
 import Line from 'lesca-line-share';
 
+// add on user-triggered event
 function clicked() {
 	Line.share('https://github.com/jameshsu1125/lesca-line-share', 'your message');
 }

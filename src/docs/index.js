@@ -1,30 +1,46 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import Line from '../lib/index';
+import { Navation, Code } from './components';
+import Demo from './demo';
+
 import './styles.less';
 
-function Page() {
-	const onClick = useCallback(() => {
-		Line.share(
-			'https://github.com/jameshsu1125/lesca-line-share',
-			`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-		);
-	}, []);
+const homepage = 'https://github.com/jameshsu1125/lesca-line-share';
+const name = 'lesca-line-share';
+const description = 'simple line share';
+const code = `import Line from 'lesca-line-share';
+
+const onClick = () => {
+	Line.share('https://github.com/jameshsu1125/lesca-line-share', 'your message');
+};
+return <button onClick={onClick}>Share to line</button>
+`;
+
+const Page = () => {
 	return (
 		<>
-			<div>
-				<h1>install</h1>
-				<p>npm install lesca-line-share --save</p>
-			</div>
-			<div>
-				<button onClick={onClick}>Share to line</button>
-			</div>
-			<div>
-				<h1>Usage</h1>
-				<a href='https://github.com/jameshsu1125/lesca-line-share'>Documentation</a>
+			<Navation />
+			<div className='content'>
+				<div>
+					<h1>{name}</h1>
+					<figcaption>{description}</figcaption>
+				</div>
+				<div>
+					<h2>install</h2>
+					<Code code={`npm install ${name} --save`} theme='command' />
+				</div>
+				<div>
+					<h2>add on user-triggered event</h2>
+					<Code code={code} />
+					<Demo />
+				</div>
+				<div>
+					<h2>Usage</h2>
+					<a href={homepage}>Documentation</a>
+				</div>
 			</div>
 		</>
 	);
-}
+};
 
 render(<Page />, document.getElementById('app'));
