@@ -1,46 +1,35 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Navation, Code } from './components';
-import Demo from './demo';
-
+import { Container } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import Navigation from './components/navigation';
+import Demo from './pages/demo';
+import Usage from './pages/usage';
 import './styles.less';
+import { theme } from './theme';
 
-const homepage = 'https://github.com/jameshsu1125/lesca-line-share';
-const name = 'lesca-line-share';
-const description = 'simple line share';
-const code = `import Line from 'lesca-line-share';
+const App = () => {
+  const [state, setState] = useState('demo');
 
-const onClick = () => {
-	Line.share('https://github.com/jameshsu1125/lesca-line-share', 'your message');
-};
-return <button onClick={onClick}>Share to line</button>
-`;
+  const appendPage = () => {
+    switch (state) {
+      default:
+      case 'demo':
+        return <Demo />;
 
-const Page = () => {
-	return (
-		<>
-			<Navation />
-			<div className='content'>
-				<div>
-					<h1>{name}</h1>
-					<figcaption>{description}</figcaption>
-				</div>
-				<div>
-					<h2>install</h2>
-					<Code code={`npm install ${name} --save`} theme='command' />
-				</div>
-				<div>
-					<h2>add on user-triggered event</h2>
-					<Code code={code} />
-					<Demo />
-				</div>
-				<div>
-					<h2>Usage</h2>
-					<a href={homepage}>Documentation</a>
-				</div>
-			</div>
-		</>
-	);
+      case 'usage':
+        return <Usage />;
+    }
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Navigation setState={setState} state={state} />
+      <Container style={{ paddingTop: '70px' }} maxWidth='lg'>
+        {appendPage()}
+      </Container>
+    </ThemeProvider>
+  );
 };
 
-render(<Page />, document.getElementById('app'));
+createRoot(document.getElementById('app')).render(<App />);
