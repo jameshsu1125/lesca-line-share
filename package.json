@@ -1,6 +1,6 @@
 {
   "name": "lesca-line-share",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "simple line Share",
   "main": "lib/index.js",
   "scripts": {
