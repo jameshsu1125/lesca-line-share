@@ -33,9 +33,6 @@ const Usage = () => (
         <Code code={e.code} theme={e.type} />
       </div>
     ))}
-    <ButtonGroup variant='contained'>
-      <Button>click</Button>
-    </ButtonGroup>
   </div>
 );
 export default Usage;
