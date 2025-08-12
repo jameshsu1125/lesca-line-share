@@ -1,4 +1,4 @@
-import { device } from './mise';
+import { device } from './misc';
 
 const share = (url: string, text: string) => {
   if (device() === 'mobile') {
